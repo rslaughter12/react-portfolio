@@ -48,7 +48,7 @@ const Projects = () => {
           <Typography variant="body1" gutterBottom>
             This project pulls data from two different third party APIs and displays the data in a user friendly way. The user can search for a Marvel character and the app will display the character's name, description, and a list of Movies that the character appears in as well as other cool features!
           </Typography>
-          <a href="link-to-project1">Link to Project 1</a>
+          <a href="https://rslaughter12.github.io/The-Avengers/">Click Here to learn more about Marvel!</a>
         </div>
         <div className={classes.card}>
           <img className={classes.image} src="project2.jpg" alt="Project 2" />
@@ -58,7 +58,7 @@ const Projects = () => {
           <Typography variant="body1" gutterBottom>
             This project uses Sequelize to create a database of users based on front end user input. The user can create a username and password and then login to place their order. The data from the menus is being pulled from the database and displayed on the page using handlebars.
           </Typography>
-          <a href="link-to-project2">Link to Project 2</a>
+          <a href="https://bbbooking.herokuapp.com/">Click Here to see Bikini Bottom Booking!</a>
         </div>
         <div className={classes.card}>
           <img className={classes.image} src="project3.jpg" alt="Project 3" />
@@ -68,7 +68,7 @@ const Projects = () => {
           <Typography variant="body1" gutterBottom>
             This project is a timed quiz game that uses JavaScript to dynamically change the HTML and CSS of the page. The user is presented with a series of questions and the game ends when the timer runs out or the user answers all of the questions. 
           </Typography>
-          <a href="link-to-project3">Link to Project 3</a>
+          <a href="https://rslaughter12.github.io/js-quiz-game/">Click Here to see the JavaScript Game!</a>
         </div>
       </div>
     </div>
