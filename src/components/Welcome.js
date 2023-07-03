@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
@@ -11,40 +11,29 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#4A148C', // Replace with your desired dark blue/purple color code
+    color: 'white', // Set text color to white
   },
   textContainer: {
     textAlign: 'left',
-    marginLeft: theme.spacing(40), // Adjust the margin left of the text
-    marginTop: theme.spacing(20), // Adjust the margin top of the text
-    // [theme.breakpoints.down('sm')]: {
-    //   display: 'flex',
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   textAlign: 'left',
-    //   marginLeft: theme.spacing(0), // Adjust the margin left of the text
-    //   marginTop: theme.spacing(0), // Adjust the margin top of the text
-    // },
+    marginLeft: theme.spacing(8), // Adjust the margin left of the text
+    marginTop: theme.spacing(8), // Adjust the margin top of the text
   },
   imageContainer: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: theme.spacing(50), // Adjust the margin bottom of the image
-
-    [theme.breakpoints.down('sm')]: {
-      display: 'none', // Hide the image on small screens
-    },
+    marginBottom: theme.spacing(10), // Adjust the margin bottom of the image
   },
   image: {
     maxWidth: '100%',
     maxHeight: '100%',
     borderRadius: '50%',
-    marginRight: theme.spacing(50), // Adjust the margin right of the image
+    marginRight: theme.spacing(5), // Adjust the margin right of the image
   },
   iconContainer: {
     display: 'flex',
     alignItems: 'center',
-    marginLeft: theme.spacing(39),
+    marginLeft: theme.spacing(8),
     marginTop: theme.spacing(2),
   },
   icon: {
@@ -67,33 +56,37 @@ export const Welcome = (props) => {
   };
 
   return (
-    <Grid container className={classes.root}>
-      <Grid item xs={12} sm={6}>
-        <Grid container justify="center" alignItems="center" className={classes.contentContainer}>
-          <Grid item xs={12} className={classes.textContainer}>
-            <Typography variant="h4" style={{ color: 'white' }}>
-              {props.name}
-            </Typography>
-            <Typography variant="h6" style={{ color: 'white' }}>
-              {props.credentials}
-            </Typography>
-            <Typography variant="h6" style={{ color: 'white' }}>
-              {props.degrees}
-            </Typography>
-          </Grid>
-          <Grid item xs={12} className={classes.iconContainer}>
-            <GitHubIcon className={classes.icon} onClick={handleGitHubClick} />
-            <LinkedInIcon className={classes.icon} onClick={handleLinkedInClick} />
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item xs={12} sm={6} className={classes.imageContainer}>
-        <img
-          src="headshot.jpg"
-          alt="Ryan Acevedo Slaughter"
-          className={classes.image}
-        />
-      </Grid>
-    </Grid>
+    <section className={`hero is-fullheight ${classes.root}`}>
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns">
+          <div className={`column is-half ${classes.imageContainer}`}>
+              <img
+                src="headshot.jpg"
+                alt="Ryan Acevedo Slaughter"
+                className={classes.image}
+              />
+            </div>
+            <div className={`column is-half ${classes.textContainer}`}>
+              <Typography variant="h4" className="title">
+                {props.name}
+              </Typography>
+              <Typography variant="h6" className="subtitle">
+                {props.credentials}
+              </Typography>
+              <Typography variant="h6" className="subtitle">
+                {props.degrees}
+              </Typography>
+              <div className={classes.iconContainer}>
+                <GitHubIcon className={classes.icon} onClick={handleGitHubClick} />
+                <LinkedInIcon className={classes.icon} onClick={handleLinkedInClick} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
+
+export default Welcome;

@@ -61,9 +61,6 @@ export const Navbar = () => {
               About
             </Typography>
             <Typography variant="h6" className={classes.title}>
-              Portfolio
-            </Typography>
-            <Typography variant="h6" className={classes.title}>
               Projects
             </Typography>
             <Typography variant="h6" className={classes.title}>
@@ -88,9 +85,6 @@ export const Navbar = () => {
             </ListItem>
             <ListItem button>
               <ListItemText primary="About" />
-            </ListItem>
-            <ListItem button>
-              <ListItemText primary="Portfolio" />
             </ListItem>
             <ListItem button>
               <ListItemText primary="Projects" />
