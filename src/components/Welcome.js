@@ -15,8 +15,10 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer: {
     textAlign: 'left',
-    marginLeft: theme.spacing(8), // Adjust the margin left of the text
-    marginTop: theme.spacing(8), // Adjust the margin top of the text
+    marginLeft: theme.spacing(7), // Adjust the margin left of the text
+    marginTop: theme.spacing(7), // Adjust the margin top of the text
+    backgroundColor: '#222B45', // Replace with your desired dark blue/purple color code
+    padding: theme.spacing(4), // Adjust the padding of the text
   },
   imageContainer: {
     display: 'flex',

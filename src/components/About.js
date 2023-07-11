@@ -6,12 +6,17 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
     display: 'flex',
+    margin: '0 auto',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#4A148C', // Replace with your desired dark blue/purple color code
+    backgroundColor: '#4A148C', // Set the overall background color to dark blue
+  },
+  content: {
+    backgroundColor: '#222B45', // Set the background color for the text section to a darker shade of blue
+    padding: theme.spacing(4), // Add padding around the text section
+    borderRadius: '5px', // Add border radius to the text section
     color: 'white', // Set text color to white
-    borderRadius: '5px', // Add border radius to the card
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Add a subtle shadow to the card
+    maxWidth: '1300px', // Limit the maximum width of the text section
   },
 }));
 
@@ -19,22 +24,16 @@ const About = () => {
   const classes = useStyles();
 
   return (
-    <div className={`card ${classes.root}`}> {/* Add the 'card' class and the custom styles */}
-      <div className="card-content">
+    <div className={classes.root}>
+      <div className={classes.content}>
         <Typography variant="h4" gutterBottom>
           About Me
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Hi there! My name is [Your Name], and I am [briefly describe yourself, e.g., a software developer, a student, etc.]. I have a passion for [mention your interests, skills, or areas of expertise].
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          [Add more information about yourself, such as your background, education, or any relevant experiences you want to highlight. Keep it concise and engaging.]
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          In my free time, I enjoy [mention your hobbies or activities you like to do outside of work/studies].
+          Hi there! My name is Ryan Acevedo Slaughter, and I am a master's degree holding educator who has a full-stack developer certification (anticipated July 2023) through the University of California Berkeley Extension Program. I have a passion for learning and teaching, and I am excited to be a part of the future of education and technology. I am currently seeking a position as a full-stack developer in the San Francisco Bay Area.
         </Typography>
         <Typography variant="body1">
-          Feel free to explore my website/portfolio to learn more about my work and projects. If you have any questions or would like to get in touch, don't hesitate to reach out through the contact information provided.
+          Feel free to explore other parts of my page to learn more about my projects as well as if you have any questions or would like to get in touch, don't hesitate to reach out through the contact information provided on my contact page.
         </Typography>
       </div>
     </div>

@@ -1,34 +1,22 @@
 import React, { useEffect } from 'react';
-
 import Navbar from './components/Navbar';
+import { BrowserRouter as Router } from 'react-router-dom'; // Update import statement
+import Routes from './Routes';
 import Welcome from './components/Welcome';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-
-import {
-  Typography,
-} from '@material-ui/core';
 
 const App = () => {
-  const name = 'Ryan';
-useEffect(() => {}, [
-]); 
+  useEffect(() => {
+    // Add any side effects or dependencies here
+  }, []);
+
   return (
     <div className="App">
-      <Navbar/>
-      <Welcome
-        name={'Ryan Acevedo Slaughter'}
-        title={'Full Stack Developer'}
-        credentials={'University of California, Berkeley - Certificated Full Stack Developer (Anticipated July 2023)'}
-        degrees={'Florida State University - Master of Science in Curriculum and Instruction'}
-      />
-      <About/>
-      <Projects/>
-      <Contact/>
+      <Router>
+        <Navbar />
+        <Routes />
+      </Router>
     </div>
   );
 };
-
 
 export default App;
