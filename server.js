@@ -3,6 +3,7 @@ const app = express();
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const { google } = require('googleapis');
+const { accessToken, storedRefreshToken } = require('./tokens'); // Import access token and refresh token
 
 app.use(express.json());
 app.use(cors());
@@ -14,64 +15,20 @@ const oAuth2Client = new google.auth.OAuth2(
   'https://developers.google.com/oauthplayground' // Redirect URL
 );
 
-// Retrieve the stored refresh token from secure storage
-const storedRefreshToken = '1//04HOTuoOotjdVCgYIARAAGAQSNwF-L9IrFdCu2rzLJo-GtA-pSjvUPeAEWuV1nIcfTvruoUcQg-B5vi_GZRTO5tbWXCe0gYP_GKE'; // Replace with the actual code to retrieve the stored refresh token
-
 // Set the refresh token on the OAuth2 client
 oAuth2Client.setCredentials({
   refresh_token: storedRefreshToken,
-});
-
-// Generate the authorization URL
-const SCOPES = ['https://www.googleapis.com/auth/gmail.send']; // Add any additional scopes your application requires
-
-const authUrl = oAuth2Client.generateAuthUrl({
-  access_type: 'offline',
-  scope: SCOPES,
-});
-
-// Redirect the user to the authorization URL
-app.get('/auth/google', (req, res) => {
-  res.redirect(authUrl);
-});
-
-// Handle the authorization callback
-app.get('/auth/google/callback', async (req, res) => {
-  const { code } = req.query;
-
-  try {
-    // Exchange the authorization code for tokens
-    const { tokens } = await oAuth2Client.getToken(code);
-
-    // Store the refresh token securely
-    const refreshToken = tokens.refresh_token;
-    // Save the refreshToken to your secure storage
-
-    // Set the credentials with the obtained tokens
-    oAuth2Client.setCredentials(tokens);
-
-    // Continue with email sending or other actions
-    res.send('Authorization successful. You can close this window.');
-  } catch (error) {
-    console.error('Error exchanging authorization code for tokens:', error);
-    res.send('Error occurred during authorization. Please try again.');
-  }
 });
 
 app.post('/api/send-email', async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
-    // Implement your email sending functionality here using Nodemailer
-    // This is a basic example using Gmail SMTP transport
-
     // Check if the access token is expired, and if so, refresh it using the stored refresh token
     if (oAuth2Client.isTokenExpiring()) {
       const { tokens } = await oAuth2Client.refreshToken();
       oAuth2Client.setCredentials(tokens);
     }
-
-    const accessToken = 'ya29.a0AbVbY6My2cCXAtXW_siy88z0sRI4IXCrrx6Zp8Ob5qyFnlBttqeMFvpWyRSuduT9qpmstr0NIaOTnW-1woAQt2yCMluKQKBFk9cQbxUjHds7VaLWDC8rne4Esy7XcmnJoGH-qu0cSgjK1iahfrmEHM2Vyj-qaCgYKAW8SAQ8SFQFWKvPlRyY4vbIl_ts6IFFHyiClag0163';
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
