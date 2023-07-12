@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, TextField, Button } from '@material-ui/core';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,7 +51,7 @@ const Contact = () => {
   const classes = useStyles();
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Retrieve form values
@@ -58,41 +59,29 @@ const Contact = () => {
     const email = event.target.elements.email.value;
     const message = event.target.elements.message.value;
 
-    // Implement email sending functionality here or make an API request to send the data
-    // This code only displays the values in the console
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
+    try {
+      // Make the API POST request
+      await axios.post('/api/send-email', { name, email, message });
 
-    // Reset the form after submission
-    event.target.reset();
+      // Reset the form after successful submission
+      event.target.reset();
 
-    // Set the form submission status to true
-    setIsFormSubmitted(true);
+      // Set the form submission status to true
+      setIsFormSubmitted(true);
+    } catch (error) {
+      console.error('Error:', error);
+      // Handle error scenarios
+    }
   };
-
   return (
     <div className={classes.root}>
       <div className={classes.contentContainer}>
-      <Typography variant="h4" gutterBottom>
-          Contact Me!
-        </Typography>
-        <Typography variant="h4" gutterBottom>
-          Ryan Acevedo Slaughter
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Email: racevedoslaughter12@gmail.com
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Phone Number: 727-858-0021
-        </Typography>
-        <Typography variant="body1">
-          City/Region: San Francisco, CA (Bay Area)
-        </Typography>
+        {/* Existing JSX code... */}
 
         <div className={classes.card}>
           {!isFormSubmitted ? (
             <form className={classes.form} onSubmit={handleSubmit}>
+              {/* Existing form fields */}
               <TextField
                 id="name"
                 label="Name"
