@@ -14,9 +14,36 @@ const useStyles = makeStyles((theme) => ({
   content: {
     backgroundColor: '#222B45', // Set the background color for the text section to a darker shade of blue
     padding: theme.spacing(4), // Add padding around the text section
-    borderRadius: '5px', // Add border radius to the text section
+    borderRadius: theme.spacing(3), // Add border radius to the text section
     color: 'white', // Set text color to white
     maxWidth: '1300px', // Limit the maximum width of the text section
+    position: 'relative', // Set position to relative for the animation
+    overflow: 'hidden', // Hide any overflow from the text container
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      border: '4px solid transparent',
+      borderRadius: theme.spacing(3),
+      animation: '$rgbWaveBorder 10s infinite',
+    },
+  },
+  '@keyframes rgbWaveBorder': {
+    '0%': {
+      borderColor: 'magenta',
+    },
+    '33.33%': {
+      borderColor: 'pink',
+    },
+    '66.67%': {
+      borderColor: 'skyblue',
+    },
+    '100%': {
+      borderColor: 'magenta',
+    },
   },
 }));
 
