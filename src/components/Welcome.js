@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
+import { Typography, IconButton } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(4),
     position: 'relative',
     overflow: 'hidden',
+    userSelect: 'none',
     borderRadius: theme.spacing(3),
   },
   borderAnimation: {
@@ -38,13 +39,14 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     border: '4px solid transparent',
     borderRadius: theme.spacing(3),
-    animation: '$rgbWaveBorder 15s infinite linear',
+    animation: '$rgbWaveBorder 8s infinite linear',
   },
   imageContainer: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     maxWidth: '40%',
+    userSelect: 'none',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
@@ -93,8 +95,17 @@ export const Welcome = (props) => {
     window.open('https://www.linkedin.com/in/ryan-slaughter-b940ab143/');
   };
 
+  const handleClick = (event) => {
+    const allowedElements = ['icon', 'hamburger']; // Add class names of allowed elements here
+
+    // Check if the clicked element has any of the allowed class names
+    if (!allowedElements.some((className) => event.target.classList.contains(className))) {
+      event.stopPropagation();
+    }
+  };
+
   return (
-    <section className={`hero is-fullheight ${classes.root}`}>
+    <section className={`hero is-fullheight ${classes.root}`} onClick={handleClick}>
       <div className="container">
         <div className={classes.content}>
           <div className={classes.imageContainer}>
@@ -119,8 +130,12 @@ export const Welcome = (props) => {
               Please explore my portfolio page to see some of the projects that I have completed early on in my coding journey, as well as my contact information.
             </Typography>
             <div className={classes.iconContainer}>
-              <GitHubIcon className={classes.icon} onClick={handleGitHubClick} />
-              <LinkedInIcon className={classes.icon} onClick={handleLinkedInClick} />
+              <IconButton onClick={handleGitHubClick}>
+                <GitHubIcon className={`${classes.icon} icon`} />
+              </IconButton>
+              <IconButton onClick={handleLinkedInClick}>
+                <LinkedInIcon className={`${classes.icon} icon`} />
+              </IconButton>
             </div>
           </div>
         </div>

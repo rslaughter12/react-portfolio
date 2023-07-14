@@ -3,15 +3,15 @@ const app = express();
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const { google } = require('googleapis');
-const { accessToken, storedRefreshToken } = require('./tokens'); // Import access token and refresh token
+const { accessToken, storedRefreshToken, clientId, clientSecret } = require('./tokens'); // Import access token and refresh token
 
 app.use(express.json());
 app.use(cors());
 
 // Create and configure the OAuth2 client
 const oAuth2Client = new google.auth.OAuth2(
-  '823000084015-atf8e0dv567jolp9sod9h9k0ivdnpod9.apps.googleusercontent.com',
-  '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',
+  clientId,
+  clientSecret,
   'https://developers.google.com/oauthplayground' // Redirect URL
 );
 
@@ -35,8 +35,8 @@ app.post('/api/send-email', async (req, res) => {
       auth: {
         type: 'OAuth2',
         user: 'racevedoslaughter12@gmail.com',
-        clientId: '823000084015-atf8e0dv567jolp9sod9h9k0ivdnpod9.apps.googleusercontent.com',
-        clientSecret: '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',
+        clientId: clientId,
+        clientSecret: clientSecret,
         refreshToken: storedRefreshToken,
         accessToken: accessToken,
       },

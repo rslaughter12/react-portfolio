@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
     padding: theme.spacing(2),
+    userSelect: 'none',
   },
   cardContainer: {
     display: 'grid',
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(4),
     maxWidth: '1500px',
     margin: '0 auto',
+    userSelect: 'none',
     marginTop: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       gridTemplateColumns: '1fr',
@@ -40,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
+    border: `4px solid magenta`,
+    borderRadius: '10px',
   },
   image: {
     width: '100%',
@@ -149,6 +153,7 @@ const Projects = () => {
           </div>
         </div>
         <div className={classes.card}>
+          <img className={classes.image} src="server.png" alt="Project 5" />
           <Typography variant="h6" gutterBottom>
             Social Network API (Back End)
           </Typography>
@@ -164,6 +169,7 @@ const Projects = () => {
           </div>
         </div>
         <div className={classes.card}>
+          <img className={classes.image} src="https://img.buzzfeed.com/buzzfeed-static/static/2020-06/9/19/asset/fe3d2c918a56/anigif_sub-buzz-400-1591732330-13.gif" alt="Project 6" />
           <Typography variant="h6" gutterBottom>
             Project 3 (Coming Soon!)
           </Typography>

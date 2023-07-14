@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     borderRadius: '5px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    userSelect: 'none',
   },
   contentContainer: {
     textAlign: 'center',

@@ -4,6 +4,7 @@ import Welcome from './components/Welcome';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Skills from './components/Skills';
 
 
 const AppRoutes = ({ onFormSubmit, isFormSubmitted }) => {
@@ -20,6 +21,7 @@ const AppRoutes = ({ onFormSubmit, isFormSubmitted }) => {
       />
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/skills" element={<Skills />} />
       <Route
         path="/contact"
         element={<Contact onFormSubmit={onFormSubmit} isFormSubmitted={isFormSubmitted} />}

@@ -70,6 +70,9 @@ export const Navbar = () => {
           <ListItem button component={Link} to="/about" onClick={handleMenuItemClick}>
             <ListItemText primary="About" />
           </ListItem>
+          <ListItem button component={Link} to="/skills" onClick={handleMenuItemClick}>
+            <ListItemText primary="Skills" />
+          </ListItem>
           <ListItem button component={Link} to="/projects" onClick={handleMenuItemClick}>
             <ListItemText primary="Projects" />
           </ListItem>
