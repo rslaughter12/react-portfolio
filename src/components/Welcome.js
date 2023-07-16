@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography, IconButton } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import headshot from '../images/headshot.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -110,7 +111,7 @@ export const Welcome = (props) => {
         <div className={classes.content}>
           <div className={classes.imageContainer}>
             <img
-              src="headshot.jpg"
+              src= {headshot}
               alt="Ryan Acevedo Slaughter"
               className={classes.image}
             />

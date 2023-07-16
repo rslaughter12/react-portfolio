@@ -4,6 +4,11 @@ import { Typography } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Marvel  from '../images/Marvel.png';
+import BikiniBottom  from '../images/BikiniBottom.png';
+import JSQuiz from '../images/JSQuiz.png';
+import Weather from '../images/weather.png';
+import Server from '../images/server.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -81,7 +86,7 @@ const Projects = () => {
       </Typography>
       <div className={classes.cardContainer}>
         <div className={classes.card}>
-          <img className={classes.image} src="Marvel.png" alt="Project 1" />
+          <img className={classes.image} src={Marvel} alt="Project 1" />
           <Typography variant="h6" gutterBottom>
             Marvel API
           </Typography>
@@ -99,7 +104,7 @@ const Projects = () => {
           </div>
         </div>
         <div className={classes.card}>
-          <img className={classes.image} src="BikiniBottom.png" alt="Project 2" />
+          <img className={classes.image} src={BikiniBottom} alt="Project 2" />
           <Typography variant="h6" gutterBottom>
             Bikini Bottom Booking
           </Typography>
@@ -117,7 +122,7 @@ const Projects = () => {
           </div>
         </div>
         <div className={classes.card}>
-          <img className={classes.image} src="JSQuiz.png" alt="Project 3" />
+          <img className={classes.image} src={JSQuiz} alt="Project 3" />
           <Typography variant="h6" gutterBottom>
             JavaScript Quiz Game
           </Typography>
@@ -135,7 +140,7 @@ const Projects = () => {
           </div>
         </div>
         <div className={classes.card}>
-          <img className={classes.image} src="weather.png" alt="Project 4" />
+          <img className={classes.image} src={Weather} alt="Project 4" />
           <Typography variant="h6" gutterBottom>
             Weather Dashboard
           </Typography>
@@ -153,7 +158,7 @@ const Projects = () => {
           </div>
         </div>
         <div className={classes.card}>
-          <img className={classes.image} src="server.png" alt="Project 5" />
+          <img className={classes.image} src={Server} alt="Project 5" />
           <Typography variant="h6" gutterBottom>
             Social Network API (Back End)
           </Typography>

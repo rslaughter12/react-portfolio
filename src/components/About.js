@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
+import briandryan from '../images/bri and ry portfolio.jpg'
+import flower from '../images/flower.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,12 +73,12 @@ const About = () => {
       <div className={classes.content}>
         <div className={classes.circleContainer}>
           <img
-            src="bri and ry portfolio.jpg"
+            src={briandryan}
             alt="Image 1"
             className={classes.circleImage}
           />
           <img 
-            src="flower.jpg"
+            src={flower}
             alt="Image 2"
             className={classes.circleImage}
           />
