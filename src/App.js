@@ -16,6 +16,7 @@ const App = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleFormSubmit = async (formData) => {
+    // this is setup for future development to have the emails sent through the backend
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
