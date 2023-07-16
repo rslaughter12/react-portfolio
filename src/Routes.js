@@ -11,7 +11,7 @@ const AppRoutes = ({ onFormSubmit, isFormSubmitted }) => {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/react-portfolio/"
         element={<Welcome
           name={'Ryan Acevedo Slaughter'}
           title={'Full Stack Developer'}

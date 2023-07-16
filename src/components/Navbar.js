@@ -64,7 +64,7 @@ export const Navbar = () => {
         }}
       >
         <List>
-          <ListItem button component={Link} to="/" onClick={handleMenuItemClick}>
+          <ListItem button component={Link} to="/react-portfolio" onClick={handleMenuItemClick}>
             <ListItemText primary="Home" />
           </ListItem>
           <ListItem button component={Link} to="/about" onClick={handleMenuItemClick}>
