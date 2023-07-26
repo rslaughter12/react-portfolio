@@ -2,13 +2,13 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Marvel  from '../images/Marvel.png';
 import BikiniBottom  from '../images/BikiniBottom.png';
 import JSQuiz from '../images/JSQuiz.png';
 import Weather from '../images/weather.png';
 import Server from '../images/server.png';
+import Learnify from '../images/learnify.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -174,23 +174,25 @@ const Projects = () => {
           </div>
         </div>
         <div className={classes.card}>
-          <img className={classes.image} src="https://img.buzzfeed.com/buzzfeed-static/static/2020-06/9/19/asset/fe3d2c918a56/anigif_sub-buzz-400-1591732330-13.gif" alt="Project 6" />
+          <img className={classes.image} src={Learnify} alt="Project 6" />
           <Typography variant="h6" gutterBottom>
-            Project 3 (Coming Soon!)
+            Learnify 
           </Typography>
           <Typography variant="body1" gutterBottom>
-            When I complete my next project, it will be displayed here!
+            This project is a full MERN stack application for an online learning platform. Technologies and skilled used in this project include React, Redux, Node.js, Express.js, MongoDB, Mongoose, GraphQL, Apollo Server, Stripe, Email.js and Heroku.
           </Typography>
-          <a>Click here (in the future) to see the project!</a>
+          <Button className={classes.button} href="https://learnify-7e031704dc94.herokuapp.com/" variant="contained" sx={{ backgroundColor: '#4A148C', color: '#FFFFFF' }}>
+             Deployed
+          </Button>
           <div className={classes.linkContainer}>
             <GitHubIcon
               className={classes.linkIcon}
-              // onClick={() => handleGitHubClick('')}
+              onClick={() => handleGitHubClick('https://github.com/UserOlena/Learnify')}
             />
           </div>
         </div>
+        </div>
       </div>
-    </div>
   );
 };
 

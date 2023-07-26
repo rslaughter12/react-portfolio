@@ -15,7 +15,7 @@ const AppRoutes = ({ onFormSubmit, isFormSubmitted }) => {
         element={<Welcome
           name={'Ryan Acevedo Slaughter'}
           title={'Full Stack Developer'}
-          credentials={'University of California, Berkeley - Certificated Full Stack Developer (Anticipated July 2023)'}
+          credentials={'University of California, Berkeley - Certificated Full Stack Developer Program'}
           degrees={'Florida State University - Master of Science in Curriculum and Instruction'}
         />}
       />
