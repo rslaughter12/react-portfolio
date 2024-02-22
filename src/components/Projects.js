@@ -181,13 +181,13 @@ const Projects = () => {
           <Typography variant="body1" gutterBottom>
             This project is a full MERN stack application for an online learning platform. Technologies and skilled used in this project include React, Redux, Node.js, Express.js, MongoDB, Mongoose, GraphQL, Apollo Server, Stripe, Email.js and Heroku.
           </Typography>
-          <Button className={classes.button} href="https://learnify-7e031704dc94.herokuapp.com/" variant="contained" sx={{ backgroundColor: '#4A148C', color: '#FFFFFF' }}>
+          <Button className={classes.button} href="https://learnify-ras-872fcfc9cd40.herokuapp.com/" variant="contained" sx={{ backgroundColor: '#4A148C', color: '#FFFFFF' }}>
              Deployed
           </Button>
           <div className={classes.linkContainer}>
             <GitHubIcon
               className={classes.linkIcon}
-              onClick={() => handleGitHubClick('https://github.com/UserOlena/Learnify')}
+              onClick={() => handleGitHubClick('https://github.com/rslaughter12/Learnify-Project')}
             />
           </div>
         </div>
